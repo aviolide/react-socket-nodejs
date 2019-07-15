@@ -5,6 +5,17 @@ The sample app uses React, Postgres, NodeJs
 
 ## Setup
 
+#### Init db postgres
+
+    host: 'postgres',
+    user: 'postgres',
+    password: 'postgres',
+    database: 'postgres',
+    dialect: 'postgres',
+    port: 5432
+    
+#### Start 
+      
     npm install
     npm run server:start
     
