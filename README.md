@@ -31,4 +31,4 @@ For frontend need to start site from web dir `npm run start`, than run tests fro
 
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-You will also see any lint errors in the console.
+Dont worry be happy
