@@ -34,7 +34,6 @@ class App {
     await this.settings.initDatabase(this.models);
     this.routes.setRoutes();
     console.log('start server');
-    this.api.messages.add({message: 'asdasd'});
   }
 
   onConnection(socket: any) {
