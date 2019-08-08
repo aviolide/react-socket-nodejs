@@ -1,4 +1,0 @@
-CREATE USER postgres;
-CREATE ROLE postgres with SUPERUSER PASSWORD 'postgres';
-CREATE DATABASE postgres;
-GRANT ALL PRIVILEGES ON DATABASE postgres TO postgres;

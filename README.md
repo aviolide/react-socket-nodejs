@@ -1,7 +1,7 @@
 # React socket chat
 Sample chat widget built
 
-The sample app uses React, Postgres, NodeJs, Socket.io
+The sample app uses React, Postgres, NodeJs, Socket.io, microservice architecture
 
 ### Start 
       
