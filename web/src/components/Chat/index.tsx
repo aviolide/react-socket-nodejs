@@ -8,8 +8,8 @@ import ChatHistory from '../ChatHistory';
 import './style.css';
 import ChatMessage from '../ChatMessage';
 
-import {api, list} from '../../Connect';
-import { messages } from "../../../../constants/routes";
+import {api} from '../../Connect';
+import { messages } from "../../routes";
 
 
 

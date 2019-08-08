@@ -1,12 +1,14 @@
-FROM node:10.15.0-alpine
-EXPOSE 4001 5432 3000
+FROM node:10-alpine
+RUN mkdir -p /folder
 
-WORKDIR /home/app/
+WORKDIR /folder
 
-COPY package.json /home/app/
+COPY . /folder
+COPY package.json /folder/package.json
 
 RUN npm install
 
-COPY . /home/app/
-COPY /helpers/wait-for-it.sh .
-RUN npm run server:start
+RUN pwd && ls && cat package.json
+
+CMD npm run server:start
+EXPOSE 4000

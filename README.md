@@ -1,28 +1,13 @@
 # React socket chat
 Sample chat widget built
 
-The sample app uses React, Postgres, NodeJs
+The sample app uses React, Postgres, NodeJs, Socket.io
 
-## Setup
-
-#### Init db postgres
-
-    host: 'postgres',
-    user: 'postgres',
-    password: 'postgres',
-    database: 'postgres',
-    dialect: 'postgres',
-    port: 5432
-    
-#### Start 
+### Start 
       
-    npm install
-    npm run server:start
-    
-    cd web/
-    npm install
-    npm run start
+    docker-compose up --build
 
+Open http://localhost:3000
 ## Tests
 
 For backend part go to `test/server` folder.

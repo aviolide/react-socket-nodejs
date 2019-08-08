@@ -15,7 +15,7 @@ export class MainSettings {
   }
 
   getSocketUrl(module: TypeModules) {
-    return `ws://localhost:${this.configs[module].port}/`;
+    return `ws://0.0.0.0:${this.configs[module].port}/`;
   }
 
   getSocketConfig(): SocketIOClient.ConnectOpts {

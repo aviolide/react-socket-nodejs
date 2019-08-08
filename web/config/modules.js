@@ -2,6 +2,7 @@
 
 const fs = require('fs');
 const path = require('path');
+const webpack = require('webpack');
 const paths = require('./paths');
 const chalk = require('react-dev-utils/chalk');
 

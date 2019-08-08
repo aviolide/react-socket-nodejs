@@ -26,7 +26,7 @@ export class Settings extends MainSettings {
     const app = express();
     const server = http.createServer(app);
 
-    server.listen(port, 'localhost');
+    server.listen(port, '0.0.0.0');
 
     server.on('error', (err) => {
       console.error(err);
@@ -46,10 +46,7 @@ export class Settings extends MainSettings {
     const moduleName = this.name;
     // @ts-ignore
     const connect = new Sequelize(
-      config.database,
-      config.user,
-      config.password,
-      {host: process.env.DB_HOST || 'localhost', dialect: config.dialect}
+      'postgres://postgres:postgres@postgres:5432/postgres'
     );
 
     const db = {};
@@ -71,7 +68,6 @@ export class Settings extends MainSettings {
     this.moduleConnect[moduleName].sequelize = connect;
 
     let retries = 5;
-    // new Promise(async (resolve) => {
     while (retries) {
       try {
         await connect.sync({force: true});
@@ -84,7 +80,6 @@ export class Settings extends MainSettings {
         await new Promise((res) => setTimeout(res, 5000));
       }
     }
-    // });
   }
 
   getDb() {

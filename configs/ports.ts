@@ -1,8 +1,8 @@
 export const configsPorts = {
   messages: {
-    port: 4001
+    port: 4000
   },
   site: {
-    port: 9000
+    port: 3000
   }
 };

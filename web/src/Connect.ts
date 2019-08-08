@@ -1,5 +1,5 @@
 import { Api } from "../../src/utils/api";
-import { messages } from "../../constants/routes";
+import { messages } from "./routes";
 
 class Connect{
   api: Api;
@@ -13,10 +13,10 @@ class Connect{
       console.log('connect front')
 
     });
-    // this.api.messages.on(messages.add, (data) => {
-    //   console.log('add from back data', data);
-    //   this.messagesList.push(data);
-    // });
+    this.api.messages.on(messages.add, (data) => {
+      console.log('add from back data', data);
+      this.messagesList.push(data);
+    });
   }
 }
 

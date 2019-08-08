@@ -1,24 +1,18 @@
-FROM node:10.15.0-alpine
-EXPOSE 4001 5432 3000
+FROM node:10-alpine
+RUN mkdir -p /web/
 
-WORKDIR /home/app/
+WORKDIR /web/
 
-COPY package.json /home/app/
+COPY ./web/ /web/
 
 RUN npm install
-#RUN npm install --prefix web/
 
-COPY . /home/app/
+ADD package.json /package.json
+RUN cd ../ && npm install
 
-#RUN ls
-#RUN pwd && cd src/utils && ls
-#RUN pwd && cd web/ && ls
-#RUN pwd && cd web/src && ls
-
-#CMD /helpers/init_db.sh
-
-#RUN npm run start --prefix web/
-RUN npm run build
-RUN npm run start
-#RUN pwd && ls && cd build && ls
-
+ADD ./src /src
+ADD ./configs /configs
+ADD ./constants /constants
+ADD tsconfig.json /tsconfig.json
+CMD npm start
+EXPOSE 3000
